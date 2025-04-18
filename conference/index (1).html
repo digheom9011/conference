@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICACE 2025 | 3rd International Conference on Advances in Civil Engineering</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #d40000;
+            --primary-dark: #a30000;
+            --primary-light: #ff4d4d;
+            --accent: #005792;
+            --light-bg: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%), 
+                        url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+            color: white;
+            position: relative;
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--primary);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: var(--primary-dark);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .date-badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid var(--primary);
+        }
+        
+        .theme-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(212, 0, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        .committee-card {
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s;
+        }
+        
+        .committee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: white;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky-top" style="background-color: white; box-shadow: 0 2px 20px rgba(0,0,0,0.1);">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg py-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <div class="d-flex align-items-center">
+                            <img src="sandip.png" alt="Sandip University" height="75" class="me-2">
+                            <div>
+                                <h5 class="mb-0" style="color: var(--primary);">its 2025</h5>
+                                <small class="text-muted">27-28 June 2025</small>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#dates">Dates</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#themes">Themes</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#committee">Committee</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#location">Venue</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        </ul>
+                        <div class="ms-lg-3 mt-3 mt-lg-0">
+                            <a href="#registration" class="btn btn-primary-custom">Register Now</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-3 fw-bold mb-4">3<sup>rd</sup> International Conference on <span style="color: var(--primary);">Advances in Civil Engineering</span></h1>
+                    <p class="lead mb-5">Exploring Innovations for Sustainable Infrastructure Development<br>27-28 June 2025 | Sandip University, Nashik, India</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#registration" class="btn btn-primary-custom btn-lg px-4">
+                            <i class="fas fa-user-plus me-2"></i>Register Now
+                        </a>
+                        <a href="#submission" class="btn btn-outline-light btn-lg px-4">
+                            <i class="fas fa-paper-plane me-2"></i>Submit Paper
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="section-title">About ICACE 2025</h2>
+                    <p class="lead">Bringing together global experts to shape the future of civil engineering</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card h-100 card-hover">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded me-3">
+                                    <i class="fas fa-info-circle fs-2" style="color: var(--primary);"></i>
+                                </div>
+                                <h3 class="mb-0">Conference Overview</h3>
+                            </div>
+                            <p>After two successful international conferences, ICACE 2025 brings together national and international researchers, scientists, and academicians to discuss the latest innovations in Civil Engineering.</p>
+                            <p>The conference aims to advance knowledge in next-generation Civil Engineering by integrating innovation across multiple disciplines including Structural, Transportation, Environmental, and Water Resource Engineering.</p>
+                            <p>This forum enables engineering graduates, academia and industry professionals to share innovations with special focus on sustainable research solutions to real-world problems.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 card-hover">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded me-3">
+                                    <i class="fas fa-university fs-2" style="color: var(--primary);"></i>
+                                </div>
+                                <h3 class="mb-0">About Sandip University</h3>
+                            </div>
+                            <p>Sandip University, Nashik is a premier UGC recognized institution and the first self-financed private university in North Maharashtra, spread across 250 acres with state-of-the-art infrastructure.</p>
+                            <h5 class="mt-4"><i class="fas fa-building me-2" style="color: var(--primary);"></i> Civil Engineering Department</h5>
+                            <p>The department is renowned for its industry-oriented approach, offering programs in B.Tech, M.Tech (various specializations), and Ph.D. in Civil Engineering, supported by experienced faculty and well-equipped laboratories.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Dates Section -->
+    <section id="dates" class="py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="section-title">Important Dates</h2>
+                    <p class="lead">Mark your calendars for these key deadlines</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="date-badge">20 April 2025</div>
+                            <h4>Abstract Submission Deadline</h4>
+                            <p>Submit your 250-300 word abstract for consideration</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="date-badge">01 May 2025</div>
+                            <h4>Acceptance Notification</h4>
+                            <p>Authors will be notified of abstract acceptance</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="date-badge">20 May 2025</div>
+                            <h4>Full Paper Submission</h4>
+                            <p>Submit your complete research paper (6-8 pages)</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="date-badge">25 May 2025</div>
+                            <h4>Registration Deadline</h4>
+                            <p>Last date to register for conference participation</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="date-badge">27-28 June 2025</div>
+                            <h4>Conference Dates</h4>
+                            <p>Two days of knowledge sharing and networking</p>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning mt-5 text-center">
+                        <i class="fas fa-exclamation-circle me-2"></i> Kindly visit our website regularly for updates
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call for Papers -->
+    <section id="submission" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="section-title">Call for Papers</h2>
+                    <p class="lead">Contribute to the advancement of civil engineering knowledge</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 card-hover">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded me-3">
+                                    <i class="fas fa-file-alt fs-2" style="color: var(--primary);"></i>
+                                </div>
+                                <h3 class="mb-0">Abstract Submission</h3>
+                            </div>
+                            <p>Authors are invited to submit abstracts of original research through email. Include:</p>
+                            <ul class="mb-4">
+                                <li>Title and 250-300 word abstract</li>
+                                <li>Author names and affiliations</li>
+                                <li>Corresponding author contact details</li>
+                                <li>3-5 keywords</li>
+                            </ul>
+                            <a href="mailto:civil.conference@sandipuniversity.edu.in" class="btn btn-primary-custom">
+                                <i class="fas fa-paper-plane me-2"></i>Submit Abstract
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 card-hover">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded me-3">
+                                    <i class="fas fa-book fs-2" style="color: var(--primary);"></i>
+                                </div>
+                                <h3 class="mb-0">Full Paper Guidelines</h3>
+                            </div>
+                            <p>After acceptance notification, submit full papers (6-8 pages) including:</p>
+                            <ul class="mb-4">
+                                <li>Abstract and keywords</li>
+                                <li>Introduction and methodology</li>
+                                <li>Results with discussion</li>
+                                <li>Conclusions and references</li>
+                                <li>Proper formatting and citations</li>
+                            </ul>
+                            <div class="alert alert-info mb-0">
+                                <i class="fas fa-info-circle me-2"></i> All accepted papers will be published in conference proceedings with ISBN
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration -->
+    <section id="registration" class="py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="section-title">Registration Fees</h2>
+                    <p class="lead">Choose your category to participate</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead style="background-color: var(--primary); color: white;">
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Indian (INR)</th>
+                                    <th>International (USD)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Students/Research Scholars</td>
+                                    <td>3000 + GST</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td>Faculty/Post-Doctoral</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Industry Professionals</td>
+                                    <td>4000 + GST</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Attendees</td>
+                                    <td>1500 + GST</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-center mt-5">
+                        <a href="https://shorturl.at/KiETP" class="btn btn-primary-custom btn-lg px-5">
+                            <i class="fas fa-user-plus me-2"></i>Register Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="brochure" class="py-5 bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center mb-5">
+                <h2 class="section-title">Conference Brochure</h2>
+                <p class="lead">Download our comprehensive brochure for complete conference details</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="card card-hover border-0 p-4">
+                    <div class="icon-container mb-4">
+                        <i class="fas fa-file-pdf fa-4x" style="color: var(--primary);"></i>
+                    </div>
+                    <h3 class="mb-3">ICACE 2025 Brochure</h3>
+                    <p class="mb-4">Our brochure contains all the essential information about the conference including detailed program schedule, speaker information, and venue details.</p>
+                    <a href="3rd-International-Conference-on-ADVANCES-IN-CIVIL-ENGINEERING-2025-1_compressed-1.pdf" class="btn btn-primary-custom btn-lg" download>
+                        <i class="fas fa-download me-2"></i> Download Brochure (PDF)
+                    </a>
+                    <div class="mt-3 text-muted">
+                        <small>File size: 2.4 MB | Updated: April 15, 2025</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Conference Themes -->
+    <section id="themes" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="section-title">Conference Themes</h2>
+                    <p class="lead">Explore the diverse topics in civil engineering</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 card-hover text-center p-4">
+                        <div class="theme-icon">
+                            <i class="fas fa-bridge"></i>
+                        </div>
+                        <h4>Structural Engineering</h4>
+                        <p class="mb-0">Innovations in building design and analysis</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 card-hover text-center p-4">
+                        <div class="theme-icon">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <h4>Transportation Engineering</h4>
+                        <p class="mb-0">Smart mobility and infrastructure solutions</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 card-hover text-center p-4">
+                        <div class="theme-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h4>Environmental Engineering</h4>
+                        <p class="mb-0">Sustainable environmental solutions</p>
+                    </div>
+                </div>
+                <!-- Additional themes would follow same pattern -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Committee -->
+    <section id="committee" class="py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="section-title">Organizing Committee</h2>
+                    <p class="lead">Meet the team behind ICACE 2025</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 committee-card p-4">
+                        <h3 class="mb-4" style="color: var(--primary);"><i class="fas fa-users me-2"></i> Leadership</h3>
+                        <div class="mb-4">
+                            <h5 class="text-muted">Chief Patron</h5>
+                            <h4>Dr. Sandip Kumar Jha</h4>
+                            <p class="mb-0">Hon'ble Chairman, Sandip University</p>
+                        </div>
+                        <div>
+                            <h5 class="text-muted">Patrons</h5>
+                            <h4>Prof. Rajendra Sinha</h4>
+                            <p class="mb-2">Hon'ble Vice-Chancellor</p>
+                            <h4>Prof. Pramod Karole</h4>
+                            <p class="mb-0">Hon'ble OSD</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 committee-card p-4">
+                        <h3 class="mb-4" style="color: var(--primary);"><i class="fas fa-user-tie me-2"></i> Conference Conveners</h3>
+                        <div class="mb-4">
+                            <h4>Prof.(Dr.) P.G. Burade</h4>
+                            <p class="mb-2">Associate Dean Engineering</p>
+                            <h4>Prof.(Dr.) Arun Kumar Dwivedi</h4>
+                            <p class="mb-2">IQAC Director</p>
+                            <h4>Prof.(Dr.) Mahesh S. Endait</h4>
+                            <p class="mb-0">Associate Dean Academics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Advisory Committee -->
+            <div class="mt-5">
+                <h3 class="section-title">International Advisory Committee</h3>
+                <div class="row g-3 mt-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 committee-card p-3">
+                            <h5>Dr. Shubham Kolhe</h5>
+                            <p class="text-muted mb-0">National Taiwan University, Taiwan</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 committee-card p-3">
+                            <h5>Dr. Muhammad Mujahid</h5>
+                            <p class="text-muted mb-0">Ahmadu Bello University, Nigeria</p>
+                        </div>
+                    </div>
+                    <!-- More members would follow same pattern -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue & Accommodation -->
+    <section id="location" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="section-title">Conference Venue</h2>
+                    <p class="lead">Discover where innovation meets infrastructure</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card h-100 card-hover">
+                        <div class="card-body p-4">
+                            <h3 class="mb-4" style="color: var(--primary);"><i class="fas fa-map-marker-alt me-2"></i> Location</h3>
+                            <p>Department of Civil Engineering<br>
+                            School of Engineering and Technology<br>
+                            Sandip University, Trimbak Road<br>
+                            Nashik, Maharashtra 422213, India</p>
+                            <div class="ratio ratio-16x9 mt-4">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5060.832352781761!2d73.66748611188416!3d19.968232286516287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdded432e59a9a3%3A0x545a803eb30e958a!2sSandip%20University!5e0!3m2!1sen!2sin!4v1744820805272!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 card-hover">
+                        <div class="card-body p-4">
+                            <h3 class="mb-4" style="color: var(--primary);"><i class="fas fa-hotel me-2"></i> Accommodation</h3>
+                            <h5 class="mt-4">On-Campus Options</h5>
+                            <p>Limited rooms available (first-come, first-served). Contact organizers at least one month prior.</p>
+                            <div class="row g-3 mt-3">
+                                <div class="col-md-6">
+                                    <div class="card h-100 committee-card p-3">
+                                        <h5>Single Occupancy</h5>
+                                        <p class="text-muted mb-0">₹1500/night</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card h-100 committee-card p-3">
+                                        <h5>Double Occupancy</h5>
+                                        <p class="text-muted mb-0">₹2500/night</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="mt-4">Nearby Hotels</h5>
+                            <div class="list-group mt-3">
+                                <div class="list-group-item">
+                                    <h6>Hotel Gateway</h6>
+                                    <p class="mb-0 text-muted">3 km from venue - ₹2500-4000/night</p>
+                                </div>
+                                <div class="list-group-item">
+                                    <h6>Hotel Regent Plaza</h6>
+                                    <p class="mb-0 text-muted">4 km from venue - ₹2000-3500/night</p>
+                                </div>
+                                <!-- More hotels would follow same pattern -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p class="lead">Get in touch with our organizing team</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 card-hover">
+                        <div class="card-body p-4">
+                            <h3 class="mb-4" style="color: var(--primary);"><i class="fas fa-headset me-2"></i> Conference Coordinators</h3>
+                            <div class="d-flex mb-4">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-primary bg-opacity-10 p-3 rounded">
+                                        <i class="fas fa-user-tie fs-2" style="color: var(--primary);"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4>Dr. Nitin Bharadiya</h4>
+                                    <p class="mb-1"><i class="fas fa-phone me-2"></i> +91 9574104823</p>
+                                    <p class="mb-0"><i class="fas fa-envelope me-2"></i> nitin.bharadiya@sandipuniversity.edu.in</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-primary bg-opacity-10 p-3 rounded">
+                                        <i class="fas fa-user-tie fs-2" style="color: var(--primary);"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4>Dr. Amit Kumar</h4>
+                                    <p class="mb-1"><i class="fas fa-phone me-2"></i> +91 9049381383</p>
+                                    <p class="mb-0"><i class="fas fa-envelope me-2"></i> amit.kumar@sandipuniversity.edu.in</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 card-hover">
+                        <div class="card-body p-4">
+                            <h3 class="mb-4" style="color: var(--primary);"><i class="fas fa-paper-plane me-2"></i> Submission & Registration</h3>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-envelope me-2"></i> Email for Submissions</h5>
+                                <p class="ms-4">civil.conference@sandipuniversity.edu.in</p>
+                            </div>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-link me-2"></i> Registration Portal</h5>
+                                <p class="ms-4">
+                                    <a href="https://shorturl.at/KiETP">https://shorturl.at/KiETP</a>
+                                </p>
+                            </div>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-globe me-2"></i> University Website</h5>
+                                <p class="ms-4">
+                                    <a href="https://www.sandipuniversity.edu.in/">www.sandipuniversity.edu.in</a>
+                                </p>
+                            </div>
+                            <div class="mb-0">
+                                <h5><i class="fas fa-phone-volume me-2"></i> Toll Free Number</h5>
+                                <p class="ms-4">18002122714</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="mb-4" style="color: var(--primary);">ICACE 2025</h4>
+                    <p>3rd International Conference on Advances in Civil Engineering<br>
+                    27-28 June 2025<br>
+                    Sandip University, Nashik, India</p>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="mb-4">Quick Links</h4>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#home" class="text-white">Home</a></li>
+                                <li class="mb-2"><a href="#about" class="text-white">About</a></li>
+                                <li class="mb-2"><a href="#dates" class="text-white">Dates</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#themes" class="text-white">Themes</a></li>
+                                <li class="mb-2"><a href="#registration" class="text-white">Registration</a></li>
+                                <li class="mb-2"><a href="#contact" class="text-white">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="mb-4">Connect With Us</h4>
+                    <div class="d-flex gap-3 mb-4">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <p class="mb-0">
+                        <i class="fas fa-envelope me-2"></i> civil.conference@sandipuniversity.edu.in
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 ICACE - Sandip University. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Organized by Department of Civil Engineering, Sandip University</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const conferenceDate = new Date("June 27, 2025 09:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = conferenceDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+    </script>
+</body>
+</html>
